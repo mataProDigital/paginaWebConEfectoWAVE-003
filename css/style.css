@@ -3,8 +3,6 @@
 	padding: 0;
 	box-sizing: border-box;
 }
---primary-color: #0099f7;
---secondary-color: #f11712;
 
 body {
 	font-family: 'Lato', sans-serif;
@@ -36,35 +34,57 @@ header {
 			hsla(1, 89%, 51%, 0.664),
 			hsla(203, 100%, 48%, 0.644)
 		),
-		url(../img/portada.jpg);
+		url(../img/webportada2.jpg);
 	/* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(
 			to right,
 			hsla(1, 89%, 51%, 0.637),
 			hsla(203, 100%, 48%, 0.658)
 		),
-		url(../img/portada.jpg);
+		url(../img/webportada2.jpg);
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background-size: cover;
 	background-attachment: fixed;
 	position: relative;
+}
+#logo {
+	width: 190px;
+	float: left;
+	padding: 1.875rem 3.125rem 0 0;
+	margin-left: 0.625rem;
 }
 
 nav {
 	text-align: right;
 	padding: 1.875rem 3.125rem 0 0;
 }
-
 nav > a {
 	color: #fff;
 	font-weight: 300;
 	text-decoration: none;
 	margin-right: 0.625rem;
+	position: relative;
 }
 
-nav > a:hover {
-	text-decoration: underline;
+nav > a::after {
+	content: "";
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ff0000;
+	transform: scaleX(0);
+	transform-origin: bottom right;
+	transition: transform 0.3s ease;
 }
+
+nav > a:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+}
+
+
 
 header .textos-header {
 	display: flex;
@@ -116,7 +136,7 @@ main .sobre-nosotros {
 }
 
 .about-textos h3 span {
-	background: var(--primary-color);
+	background: #f11712;
 	color: #fff;
 	border-radius: 50%;
 	display: inline-block;
@@ -168,11 +188,15 @@ main .sobre-nosotros {
 	top: 0;
 	transform: scale(0);
 	background: hsla(207, 91%, 27%, 0.7);
-	transition: transform 0.5s;
+	transition: transform 0.6s;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	-webkit-transition: transform 0.6s;
+	-moz-transition: transform 0.6s;
+	-ms-transition: transform 0.6s;
+	-o-transition: transform 0.6s;
 }
 
 .hover-galeria img {
@@ -185,7 +209,9 @@ main .sobre-nosotros {
 
 .imagen-port:hover .hover-galeria {
 	transform: scale(1);
+  
 }
+
 /* Clients */
 
 .cards {
@@ -297,8 +323,8 @@ footer {
 	margin: 1.25rem 0 0 0;
 	color: #9e9797;
 }
-h2 span{
-  color: #f11712;
+h2 span {
+	color: #f11712;
 }
 
 @media screen and (max-width: 56.25rem) {
